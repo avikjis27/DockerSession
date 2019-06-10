@@ -1,36 +1,96 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
 
 <head>
-	<meta charset="utf-8" />
-	<title>Docker Session - Application Developer</title>
-	<link href="lib/style.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<title>reveal.js</title>
+	<link rel="stylesheet" href="css/reset.css">
+	<link rel="stylesheet" href="css/reveal.css">
+	<link rel="stylesheet" href="css/theme/black.css">	
+	<link rel="stylesheet" href="lib/css/monokai.css">
+
+	<script>
+		var link = document.createElement('link');
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+		document.getElementsByTagName('head')[0].appendChild(link);
+	</script>
 </head>
 
 <body>
-	<div id="impress">
-		<div class="step slide" data-x="-1000" data-y="-1500">
-			<q>using <strong>impress.js</strong></q>
-		</div>
+	<div class="reveal">
+		<div class="slides">
+			<section data-background="images/container.jpg">
+				<h1><span style="background-color: #00000085">Docker deep-drive</span></h1>
+			</section>
+			<section>
+				<h2>What's the hype about containerization?</h2>
+			</section>
+			<section>
+				<section>
+					<h2>What is a container?</h2>
+					<p class="fragment fade-in">
+						A container is a standard unit of software that packages up code and all its <span
+							class="red">dependencies</span> so the
+						application runs <span class="red">quickly</span> and reliably from one
+						computing <span class="red">environment</span> to another. ><a
+							href="https://www.docker.com/resources/what-container">Docker</a>
+					</p>
+					<p class="fragment fade-in">
+						The word “container” doesn’t mean anything super precise.
+						Basically there are a few new <span class="red">Linux kernel</span> features (“namespaces” and
+						“cgroups”) that let you
+						<span class="red">isolate</span> processes from each other. When you use those features, you
+						call it “containers”. ><a href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container/">Julia
+							Evans</a>
+					</p>
+				</section>
+				<section>
+					<h2>So c14n is about</h2>
+					<ul>
+						<li>dependency <span class="fragment fade-in red">app runtime, libraries, binaries etc</span>
+						</li>
+						<li>quickness <span class="fragment fade-in red">uses native kernel</span></li>
+						<li>environment <span class="fragment fade-in red">os libraries, system call</span></li>
+						<li>linux kernel <span class="fragment fade-in red">uses linux kernel features</span></li>
+						<li>isolation <span class="fragment fade-in red">namespace and cgroups</span></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Namespace and cgroups</h2>
+					<p>unshare, nsenter, cgcreate, cgexec, seccomp-bpf</p>
 
-		<div class="step slide" data-x="0" data-y="-1500">
-			<q>Simplicity is prerequisite for reliability<br><strong>Edsger Dijkstra</strong></q>
+				</section>
+			</section>
+			<section>
+					<h2>Docker architecture</h2>
+			</section>
 		</div>
-
-		<div class="step" data-x="0" data-y="0" data-scale="4">
-			<q>If you can't explain it simply, you don't understand it well enough<br>
-				<strong>Albert Einstein</strong></q>
-		</div>
-
-		<div class="step" data-x="850" data-y="3000" data-rotate="90" data-scale="5">
-			<iframe width="560" height="315" src="https://www.youtube.com/embed/7Pq-S557XQU" frameborder="0"
-				allowfullscreen></iframe>
-			<br><a href="https://www.youtube.com/user/CGPGrey">CGP Grey</a>
-		</div>
-
 	</div>
-	<script src="lib/impress.js"></script>
-	<script>impress();</script>
+
+	<script src="js/reveal.js"></script>
+
+	<script>
+		Reveal.initialize({
+			dependencies: [{
+					src: 'plugin/markdown/marked.js'
+				},
+				{
+					src: 'plugin/markdown/markdown.js'
+				},
+				{
+					src: 'plugin/notes/notes.js',
+					async: true
+				},
+				{
+					src: 'plugin/highlight/highlight.js',
+					async: true
+				}
+			]
+		});
+	</script>
 </body>
 
 </html>
