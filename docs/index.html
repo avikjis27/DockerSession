@@ -4,10 +4,10 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<title>reveal.js</title>
+	<title>Docker deep-drive</title>
 	<link rel="stylesheet" href="css/reset.css">
 	<link rel="stylesheet" href="css/reveal.css">
-	<link rel="stylesheet" href="css/theme/black.css">	
+	<link rel="stylesheet" href="css/theme/black.css">
 	<link rel="stylesheet" href="lib/css/monokai.css">
 
 	<script>
@@ -26,8 +26,25 @@
 				<h1><span style="background-color: #00000085">Docker deep-drive</span></h1>
 			</section>
 			<section>
-				<h2>What's the hype about containerization?</h2>
+				<section data-background="https://media.giphy.com/media/3oEduOnl5IHM5NRodO/giphy.gif">
+					<h2>What's the hype about containerization?</h2>
+				</section>
+				<section>
+					<iframe width="889" height="500" src="https://www.youtube.com/embed/J9LK6EtxzgM" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+						allowfullscreen></iframe>
+				</section>
+				<section>
+					<h2>This Generated the demand of</h2>
+					<ul>
+						<li>Super scalable architecture like microservices (may be)</li>
+						<li>Isolation in highly shared environment like cloud infra</li>
+						<li>Provide predictable execution in heterogeneous cloud infra</li>
+					</ul>
+
+				</section>
 			</section>
+
 			<section>
 				<section>
 					<h2>What is a container?</h2>
@@ -61,11 +78,46 @@
 				<section>
 					<h2>Namespace and cgroups</h2>
 					<p>unshare, nsenter, cgcreate, cgexec, seccomp-bpf</p>
+				</section>
 
+			</section>
+			<section>
+				<section>
+					<h2>Docker architecture</h2>
+				</section>
+				<section>
+					<img src="images/docker_components.png">
 				</section>
 			</section>
 			<section>
-					<h2>Docker architecture</h2>
+				<h2>References</h2>
+
+				<a style="font-size: medium;"
+					href="https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r">https://www.ianlewis.org/en/container-runtimes-part-1-introduction-container-r</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai">https://www.ianlewis.org/en/container-runtimes-part-2-anatomy-low-level-contai</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.redhat.com/en/blog/architecting-containers-part-3-how-user-space-affects-your-application">https://www.redhat.com/en/blog/architecting-containers-part-3-how-user-space-affects-your-application</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.redhat.com/en/blog/architecting-containers-part-1-why-understanding-user-space-vs-kernel-space-matters">https://www.redhat.com/en/blog/architecting-containers-part-1-why-understanding-user-space-vs-kernel-space-matters</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.redhat.com/en/blog/architecting-containers-part-2-why-user-space-matters">https://www.redhat.com/en/blog/architecting-containers-part-2-why-user-space-matters</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.redhat.com/en/topics/containers/whats-a-linux-container">https://www.redhat.com/en/topics/containers/whats-a-linux-container</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container">https://jvns.ca/blog/2016/10/10/what-even-is-a-container/</a>
+				</br>
+				<a style="font-size: medium;"
+					href="http://alexander.holbreich.org/docker-components-explained/">http://alexander.holbreich.org/docker-components-explained/</a>
+				</br>
+				https://www.youtube.com/watch?v=VWuHWfEB6ro
+
 			</section>
 		</div>
 	</div>
