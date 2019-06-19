@@ -22,8 +22,16 @@
 <body>
 	<div class="reveal">
 		<div class="slides">
-			<section data-background="images/container.jpg">
-				<h1><span style="background-color: #00000085">Docker deep-drive</span></h1>
+			<section data-background="#3381a0">
+				<h2>Docker deep-dive</h2>
+			</section>
+			<section>
+				<h2>Fact</h2>
+				<img src="images/docker-facts-1.png">
+			</section>
+			<section>
+				<h2>Setting Expectation</h2>
+				<img src="https://media.giphy.com/media/7MZ0v9KynmiSA/giphy.gif">
 			</section>
 			<section>
 				<section data-background="https://media.giphy.com/media/3oEduOnl5IHM5NRodO/giphy.gif">
@@ -35,60 +43,116 @@
 						allowfullscreen></iframe>
 				</section>
 				<section>
-					<h2>This Generated the demand of</h2>
+					<h2>Rise of cloud native</h2>
 					<ul>
-						<li>Super scalable architecture like microservices (may be)</li>
-						<li>Isolation in highly shared environment like cloud infra</li>
-						<li>Provide predictable execution in heterogeneous cloud infra</li>
+						<li>Provides Scalability</li>
+						<li>Provides Isolation and security</li>
+						<li>Provides predictable execution</li>
 					</ul>
+				</section>
+				<section>
+					<p>As VMs were not very scalable, cloud community was looking for some new solutions. Meanwhile
+						around 2002-2007 linux kernel was getting equipped with <span class="red">Namespace</span> and
+						<span class="red">cgroups</span>.</p>
 
+					<a href="https://dzone.com/articles/evolution-of-linux-containers-future">Evolution of linux
+						containers</a>
+				</section>
+			</section>
+			<section>
+				<section>
+					We'll follow bottom-up approac to understand c14n
+					<p class="fragment fade-in green">First experiment with lunux kernel features</p>
+					<p class="fragment fade-in green">Then how container aka. Docker implements those</p>
+				</section>
+				<section data-background="https://media.giphy.com/media/SiKqNZqksVYWmQEMjd/giphy.gif">
+					<h2>Let's dive in</h2>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Name + space ??</h2>
+					<p class="fragment fade-in">Lexmark[avik avik avik sourav sourav rajib]</p>
+					<p class="fragment fade-in"><span class="green">DevOps[avik sourav rajib]</span> <span
+							class="red">Sales[avik sourav]</span> <span class="blue">Web[avik rajib]</span></p>
+					<ul class="fragment fade-in">
+						<li>Java packages</li>
+						<li>DNS hierarchy</li>
+						<li>Directory structure</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Linux namespaces</h2>
+					<ul>
+						<li>Process id namespace</li>
+						<li>Network namespace</li>
+						<li>Mount namespace</li>
+						<li>IPC namespace</li>
+						<li>User namespace</li>
+						<li>Cgroup namespace</li>
+						<li>UTS namespace</li>
+					</ul>
+				</section>
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Experiment</h2>
+				</section>
+				<section>
+					<h2>control groups</h2>
+					<p>cgcreate, cgexec, cgdelete</p>
+				</section>
+				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+					<h2>Experiment</h2>
 				</section>
 			</section>
 
 			<section>
-				<section>
-					<h2>What is a container?</h2>
-					<p class="fragment fade-in">
-						A container is a standard unit of software that packages up code and all its <span
-							class="red">dependencies</span> so the
-						application runs <span class="red">quickly</span> and reliably from one
-						computing <span class="red">environment</span> to another. ><a
-							href="https://www.docker.com/resources/what-container">Docker</a>
-					</p>
-					<p class="fragment fade-in">
-						The word “container” doesn’t mean anything super precise.
-						Basically there are a few new <span class="red">Linux kernel</span> features (“namespaces” and
-						“cgroups”) that let you
-						<span class="red">isolate</span> processes from each other. When you use those features, you
-						call it “containers”. ><a href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container/">Julia
-							Evans</a>
-					</p>
-				</section>
-				<section>
-					<h2>So c14n is about</h2>
-					<ul>
-						<li>dependency <span class="fragment fade-in red">app runtime, libraries, binaries etc</span>
-						</li>
-						<li>quickness <span class="fragment fade-in red">uses native kernel</span></li>
-						<li>environment <span class="fragment fade-in red">os libraries, system call</span></li>
-						<li>linux kernel <span class="fragment fade-in red">uses linux kernel features</span></li>
-						<li>isolation <span class="fragment fade-in red">namespace and cgroups</span></li>
-					</ul>
-				</section>
-				<section>
-					<h2>Namespace and cgroups</h2>
-					<p>unshare, nsenter, cgcreate, cgexec, seccomp-bpf</p>
-				</section>
-
+				<h2>Business case</h2>
+				<img src="images/docker-facts-3.png">
 			</section>
 			<section>
-				<section>
-					<h2>Docker architecture</h2>
-				</section>
-				<section>
-					<img src="images/docker_components.png">
-				</section>
+				<h2>What is a container?</h2>
+				<p class="fragment fade-in">
+					A container is a standard unit of software that packages up code and all its <span
+						class="red">dependencies</span> so the
+					application runs <span class="red">quickly</span> and reliably from one
+					computing <span class="red">environment</span> to another. ><a
+						href="https://www.docker.com/resources/what-container">Docker</a>
+				</p>
+				<p class="fragment fade-in">
+					The word “container” doesn’t mean anything super precise.
+					Basically there are a few new <span class="red">Linux kernel</span> features (“namespaces” and
+					“cgroups”) that let you
+					<span class="red">isolate</span> processes from each other. When you use those features, you
+					call it “containers”. ><a href="https://jvns.ca/blog/2016/10/10/what-even-is-a-container/">Julia
+						Evans</a>
+				</p>
 			</section>
+			<section>
+				<h2>Docker architecture</h2>
+			</section>
+			<section>
+				<img src="images/docker_components.png">
+			</section>
+			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+				<h2>Experiment</h2>
+			</section>
+			<section>
+				<h2>Connecting the dots</h2>
+			</section>
+			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+				<h2>Experiment</h2>
+			</section>
+
+
+
+
+			</section>
+
+			<section>
+				<h2>Coming up</h2>
+				<img src="images/docker-facts-2.png">
+			</section>
+
 			<section>
 				<h2>References</h2>
 
@@ -116,9 +180,13 @@
 				<a style="font-size: medium;"
 					href="http://alexander.holbreich.org/docker-components-explained/">http://alexander.holbreich.org/docker-components-explained/</a>
 				</br>
-				https://www.youtube.com/watch?v=VWuHWfEB6ro
-
+				<a style="font-size: medium;"
+					href="https://www.youtube.com/watch?v=VWuHWfEB6ro">https://www.youtube.com/watch?v=VWuHWfEB6ro</a>
+				</br>
+				<a style="font-size: medium;"
+					href="https://www.youtube.com/watch?v=8fi7uSYlOdc&list=LLGAfvU4MGXm6aHkUA9DPE9Q&index=6&t=1830s">https://www.youtube.com/watch?v=8fi7uSYlOdc&list=LLGAfvU4MGXm6aHkUA9DPE9Q&index=6&t=1830s</a>
 			</section>
+			<section data-background="https://media.giphy.com/media/lD76yTC5zxZPG/giphy.gif"></section>
 		</div>
 	</div>
 
