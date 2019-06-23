@@ -151,13 +151,13 @@ body {
   color: #1b91ff; }
 
 .red{
-	color: #ff2c2d;
+    color: #ff2c2d !important ;
 }
 .green{
-	color: #17ff2e;
+	color: #17ff2e !important ;
 }
 .blue{
-	color: #1b91ff;
+	color: #1b91ff !important ;
 }
 /*********************************************
  * DEFAULT ELEMENT STYLES

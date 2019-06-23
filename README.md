@@ -51,6 +51,8 @@ To create a new mount `mount --bind /usr/bin/ /mnt`
 `sudo cgexec  -g memory:containergroup bash`
 `sudo cgdelete memory:containergroup`
 
+<p>cgcreate, cgexec, cgdelete, cgclassify</p>
+
 ## Experiment with docker
 
 

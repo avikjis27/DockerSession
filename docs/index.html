@@ -33,81 +33,29 @@
 				<h2>Setting Expectation</h2>
 				<img src="https://media.giphy.com/media/7MZ0v9KynmiSA/giphy.gif">
 			</section>
+			<section data-background="https://media.giphy.com/media/3oEduOnl5IHM5NRodO/giphy.gif">
+				<h2>What's the hype about containerization?</h2>
+			</section>
 			<section>
-				<section data-background="https://media.giphy.com/media/3oEduOnl5IHM5NRodO/giphy.gif">
-					<h2>What's the hype about containerization?</h2>
-				</section>
-				<section>
-					<iframe width="889" height="500" src="https://www.youtube.com/embed/J9LK6EtxzgM" frameborder="0"
-						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-						allowfullscreen></iframe>
-				</section>
-				<section>
-					<h2>Rise of cloud native</h2>
-					<ul>
-						<li>Provides Scalability</li>
-						<li>Provides Isolation and security</li>
-						<li>Provides predictable execution</li>
-					</ul>
-				</section>
-				<section>
-					<p>As VMs were not very scalable, cloud community was looking for some new solutions. Meanwhile
-						around 2002-2007 linux kernel was getting equipped with <span class="red">Namespace</span> and
-						<span class="red">cgroups</span>.</p>
+				<iframe width="889" height="500" src="https://www.youtube.com/embed/J9LK6EtxzgM" frameborder="0"
+					allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+					allowfullscreen></iframe>
+			</section>
+			<section>
+				<h2>Rise of cloud native</h2>
+				<ul>
+					<li>Provides Scalability</li>
+					<li>Provides Isolation and Security</li>
+					<li>Provides Predictable execution</li>
+				</ul>
+			</section>
+			<section>
+				<p>As VMs were not very scalable, cloud community was looking for some new solutions. Meanwhile
+					around 2002-2007 linux kernel was getting equipped with <span class="red">Namespace</span> and
+					<span class="red">cgroups</span>.</p>
 
-					<a href="https://dzone.com/articles/evolution-of-linux-containers-future">Evolution of linux
-						containers</a>
-				</section>
-			</section>
-			<section>
-				<section>
-					We'll follow bottom-up approac to understand c14n
-					<p class="fragment fade-in green">First experiment with lunux kernel features</p>
-					<p class="fragment fade-in green">Then how container aka. Docker implements those</p>
-				</section>
-				<section data-background="https://media.giphy.com/media/SiKqNZqksVYWmQEMjd/giphy.gif">
-					<h2>Let's dive in</h2>
-				</section>
-			</section>
-			<section>
-				<section>
-					<h2>Name + space ??</h2>
-					<p class="fragment fade-in">Lexmark[avik avik avik sourav sourav rajib]</p>
-					<p class="fragment fade-in"><span class="green">DevOps[avik sourav rajib]</span> <span
-							class="red">Sales[avik sourav]</span> <span class="blue">Web[avik rajib]</span></p>
-					<ul class="fragment fade-in">
-						<li>Java packages</li>
-						<li>DNS hierarchy</li>
-						<li>Directory structure</li>
-					</ul>
-				</section>
-				<section>
-					<h2>Linux namespaces</h2>
-					<ul>
-						<li>Process id namespace</li>
-						<li>Network namespace</li>
-						<li>Mount namespace</li>
-						<li>IPC namespace</li>
-						<li>User namespace</li>
-						<li>Cgroup namespace</li>
-						<li>UTS namespace</li>
-					</ul>
-				</section>
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Experiment</h2>
-				</section>
-				<section>
-					<h2>control groups</h2>
-					<p>cgcreate, cgexec, cgdelete</p>
-				</section>
-				<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-					<h2>Experiment</h2>
-				</section>
-			</section>
-
-			<section>
-				<h2>Business case</h2>
-				<img src="images/docker-facts-3.png">
+				<a href="https://dzone.com/articles/evolution-of-linux-containers-future">Evolution of linux
+					containers</a>
 			</section>
 			<section>
 				<h2>What is a container?</h2>
@@ -128,26 +76,74 @@
 				</p>
 			</section>
 			<section>
+				We'll follow bottom-up approach to understand c14n
+				<p class="fragment fade-in blue">First experiment with lunux kernel features</p>
+				<p class="fragment fade-in blue">Then how container aka. Docker implements those</p>
+			</section>
+			<section data-background="https://media.giphy.com/media/SiKqNZqksVYWmQEMjd/giphy.gif">
+				<h2>Let's dive in</h2>
+			</section>
+			<section>
+				<h2>Name + space</h2>
+				<p class="fragment fade-in">Lexmark[avik avik avik sourav sourav rajib]</p>
+				<p class="fragment fade-in"><span class="green">DevOps[avik sourav rajib]</span> <span
+						class="red">Sales[avik sourav]</span> <span class="blue">Web[avik rajib]</span></p>
+				<ul class="fragment fade-in">
+					<li>Java packages</li>
+					<li>DNS hierarchy</li>
+					<li>Directory structure</li>
+				</ul>
+			</section>
+			<section>
+				<h2>Linux namespaces</h2>
+				<ul>
+					<li class="red">Process id namespace</li>
+					<li class="red">Network namespace</li>
+					<li class="red">Mount namespace</li>
+					<li>IPC namespace</li>
+					<li>User namespace</li>
+					<li>Cgroup namespace</li>
+					<li>UTS namespace</li>
+				</ul>
+			</section>
+			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+				<h2>Demonstration</h2>
+			</section>
+			<section data-background="images/cgroups.jpeg" style="background-color: #00000073">
+				<h2>control groups</h2>
+
+			</section>
+			<section>
+				<h2>Linux control groups</h2>
+				<ul>
+					<li class="red">Memory resource</li>
+					<li>CPU resource</li>
+					<li>Device resource</li>
+					<li>Network resource</li>
+					<li>Block IO</li>
+					<li>UTS namespace</li>
+				</ul>
+			</section>
+			<section>
+				<img src="images/namespace-cg.png">
+			</section>
+			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
+				<h2>Demonstration</h2>
+			</section>
+			<section>
+				<h2>Business case</h2>
+				<img src="images/docker-facts-3.png">
+			</section>
+
+			<section>
 				<h2>Docker architecture</h2>
 			</section>
 			<section>
 				<img src="images/docker_components.png">
 			</section>
 			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-				<h2>Experiment</h2>
+				<h2>Demonstration</h2>
 			</section>
-			<section>
-				<h2>Connecting the dots</h2>
-			</section>
-			<section data-transition="slide" data-background="#4d7e65" data-background-transition="zoom">
-				<h2>Experiment</h2>
-			</section>
-
-
-
-
-			</section>
-
 			<section>
 				<h2>Coming up</h2>
 				<img src="images/docker-facts-2.png">
