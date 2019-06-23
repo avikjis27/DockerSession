@@ -1,5 +1,7 @@
 # Docker Deep-dive
 
+[Website](https://avikjis27.github.io/DockerSession/)
+
 ## Namespace Demonstration
 
 ### Experiment with process namespace
@@ -85,7 +87,9 @@ Observe cgroup and user namespace not listed here and may be handled in a differ
 
 
 ### Other important command
-`docker export $(docker create busybox) | tar -C rootfs -xvf -`
-
-
+- `docker export $(docker create busybox) | tar -C rootfs -xvf -`
+- `docker system prune`
+- `docker container ls -a`
+- `docker images ls -a`
+- `docker ps -a`
 

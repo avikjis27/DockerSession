@@ -1,4 +1,0 @@
-docker system prune    # command will remove all stopped containers, all dangling images, and all unused networks
-docker container ls -a
-docker images ls -a
-docker ps -a
