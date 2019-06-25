@@ -117,7 +117,7 @@ Now run using no seccomp profile `docker run --rm -it --security-opt seccomp=unc
 
 
 ## Demonstrating Docker Architecture
-- Watch - `watch 'ps fxa | grep "docker\|containerd\|runc" -A 3'`
+- Watch - `watch 'ps fxa | grep "docker\|containerd\|runc\|sleep" -A 3'`
 - run - `docker run -it alpine /bin/sh`
 - Observe the hierarchical structure of the processes and understand the process id map. Ensuring the isolation.
 - Observe all the processes running under namespace `sudo lsns -t pid`, see total process count changes if we - run `sleep 60` inside the container.
@@ -132,6 +132,16 @@ User        `sudo lsns -t user`     User and group IDs
 UTS         `sudo lsns -t uts`      Hostname and NIS domain name
 ```
 Observe cgroup and user namespace not listed here and may be handled in a different way.
+
+### Run container using runc
+- Watch using `watch 'ps fxa | grep "runc\|sleep"'`
+- `mkdir busybox`
+- `cd busybox`
+- `mkdir rootfs`
+- busybox>> `docker export $(docker create busybox) | tar -C rootfs -xvf -`
+- busybox>> `runc spec`
+- busybox>> `sudo runc create busybox`
+- busybox>> `sudo runc run busybox`
 
 
 ### Wrap up
