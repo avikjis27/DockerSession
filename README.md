@@ -156,3 +156,6 @@ Observe cgroup and user namespace not listed here and may be handled in a differ
 - `docker images ls -a`
 - `docker ps -a`
 
+
+## Suggestion from the session 
+- `Inter network namespace communication`
